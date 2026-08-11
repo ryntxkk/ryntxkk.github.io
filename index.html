@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNFINISHED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="mouse-light" aria-hidden="true"></div>
+    <div id="ambient-particles" aria-hidden="true"></div>
+    <div id="transition-overlay" aria-hidden="true"></div>
+    <nav id="progress-indicator" class="progress-indicator" aria-label="Story progress" aria-hidden="true">
+        <button class="progress-dot is-active" data-target="memory-1" type="button" aria-label="Go to Memory 01"></button>
+        <button class="progress-dot" data-target="memory-2" type="button" aria-label="Go to Memory 02"></button>
+        <button class="progress-dot" data-target="memory-3" type="button" aria-label="Go to Memory 03"></button>
+        <button class="progress-dot" data-target="memory-4" type="button" aria-label="Go to Memory 04"></button>
+    </nav>
+    <main>
+        <section id="intro" class="is-visible">
+            <p id="typing"></p>
+        </section>
+
+        <section id="landing" class="is-hidden">
+            <div id="landing-content">
+                <h1 id="logo">
+                    <span>U</span>
+                    <span>N</span>
+                    <span>F</span>
+                    <span>I</span>
+                    <span>N</span>
+                    <span>I</span>
+                    <span>S</span>
+                    <span>H</span>
+                    <span>E</span>
+                    <span>D</span>
+                </h1>
+                <p class="subtitle">Echoes of a Heart</p>
+                <button id="enterBtn" type="button">ENTER</button>
+            </div>
+        </section>
+
+        <div id="story-fade" class="story-fade" aria-hidden="true"></div>
+
+        <section id="narration-screen" class="narration-screen is-hidden" aria-live="polite" tabindex="-1">
+            <div class="narration-inner">
+                <p id="narration-line-1" class="narration-line">I don't remember the exact day.</p>
+                <p id="narration-line-2" class="narration-line">I don't remember<br>what we talked about.</p>
+                <p id="narration-line-3" class="narration-line">I don&rsquo;t remember<br>who smiled first.</p>
+                <p id="narration-line-4" class="narration-line narration-line--pause">But...</p>
+                <p id="narration-line-5" class="narration-line">I remember</p>
+                <p id="narration-line-6" class="narration-line narration-line--emphasis">how it felt.</p>
+                <button id="narration-continue" class="continue-button continue-button--center" type="button" data-next="memory-1">CONTINUE &rarr;</button>
+            </div>
+        </section>
+
+        <section id="memory-1" class="story-section is-hidden memory-section--centered" tabindex="-1">
+            <div class="memory-inner memory-inner--centered">
+                <span class="memory-label">MEMORY 01</span>
+                <h2 class="memory-title">The Beginning</h2>
+                <div class="memory-copy">
+                    <p>It started<br>like every other day.</p>
+                    <p>Nothing special happened.</p>
+                    <p>We met.</p>
+                    <p>We talked.</p>
+                    <p>Then we went home.</p>
+                    <p>If someone had asked me,</p>
+                    <p>&ldquo;Will you remember this day?&rdquo;</p>
+                    <p>I would have said,</p>
+                    <p>&ldquo;No.&rdquo;</p>
+                    <p>Because...</p>
+                    <p>it felt<br>like every other day.</p>
+                    <p>Funny...</p>
+                    <p>Those are the days<br>I remember the most.</p>
+                </div>
+                <button id="memory-1-continue" class="continue-button continue-button--center" type="button" data-next="memory-2">CONTINUE &rarr;</button>
+            </div>
+        </section>
+
+        <section id="memory-2" class="story-section is-hidden memory-section--left" tabindex="-1">
+            <div class="memory-inner memory-inner--left">
+                <span class="memory-label">MEMORY 02</span>
+                <h2 class="memory-title">Getting Used To You</h2>
+                <div class="memory-copy">
+                    <p>We didn&rsquo;t become close<br>in one day.</p>
+                    <p>It happened slowly.</p>
+                    <p>One conversation.</p>
+                    <p>Then another.</p>
+                    <p>One laugh.</p>
+                    <p>Then another.</p>
+                    <p>Sometimes<br>we had nothing important<br>to say.</p>
+                    <p>Yet somehow...</p>
+                    <p>those became<br>the longest conversations.</p>
+                    <p>One day,<br>without realizing it,</p>
+                    <p>I started waiting...</p>
+                    <p>not for a message.</p>
+                    <p>Not for a call.</p>
+                    <p>Just...</p>
+                    <p>one more conversation.</p>
+                </div>
+                <button id="memory-2-continue" class="continue-button continue-button--left" type="button" data-next="memory-3">CONTINUE &rarr;</button>
+            </div>
+        </section>
+
+        <section id="memory-3" class="story-section is-hidden memory-section--spacious" tabindex="-1">
+            <div class="memory-inner memory-inner--spacious">
+                <span class="memory-label">MEMORY 03</span>
+                <h2 class="memory-title">Five More Minutes</h2>
+                <div class="memory-copy memory-copy--spacious">
+                    <p>Looking back...</p>
+                    <p>I don&rsquo;t remember<br>the important conversations.</p>
+                    <p>I remember<br>walking<br>a little slower.</p>
+                    <p>Waiting<br>a little longer.</p>
+                    <p>Finding<br>one more reason<br>not to leave yet.</p>
+                    <p>Sometimes...</p>
+                    <p>we stole<br>five more minutes<br>from an ordinary day.</p>
+                    <p>Back then,<br>it felt normal.</p>
+                    <p>Today...</p>
+                    <p>I would give anything<br>for those<br>five more minutes.</p>
+                </div>
+                <button id="memory-3-continue" class="continue-button continue-button--center" type="button" data-next="memory-4">CONTINUE &rarr;</button>
+            </div>
+        </section>
+
+        <section id="memory-4" class="story-section is-hidden memory-section--offset" tabindex="-1">
+            <div class="memory-inner memory-inner--offset">
+                <span class="memory-label">MEMORY 04</span>
+                <h2 class="memory-title">Quiet Days</h2>
+                <div class="memory-copy memory-copy--offset">
+                    <p>Then...</p>
+                    <p>life became busy.</p>
+                    <p>Days passed.</p>
+                    <p>Replies became shorter.</p>
+                    <p>Conversations became fewer.</p>
+                    <p>Nothing bad happened.</p>
+                    <p>Nobody was angry.</p>
+                    <p>Nobody said goodbye.</p>
+                    <p>But silence...</p>
+                    <p>has a strange way<br>of changing<br>everything.</p>
+                    <p>I kept thinking...</p>
+                    <p>maybe tomorrow<br>we&rsquo;d have<br>one more conversation.</p>
+                </div>
+                <button id="memory-4-continue" class="continue-button continue-button--right" type="button" data-next="ending-screen">CONTINUE &rarr;</button>
+            </div>
+        </section>
+
+        <section id="ending-screen" class="story-section is-hidden ending-screen" tabindex="-1">
+            <div class="memory-inner ending-inner">
+                <p class="ending-label">UNFINISHED</p>
+                <p class="ending-copy">Maybe...<br>not every story<br>needs an ending.</p>
+                <p class="ending-copy">Maybe...<br>some stories<br>are meant<br>to stay unfinished.</p>
+                <p class="ending-copy ending-copy--quiet">...</p>
+                <p class="ending-copy">The moments<br>I thought<br>were ordinary...</p>
+                <p class="ending-copy">became the ones<br>I never forgot.</p>
+                <p class="ending-copy ending-copy--quiet">...</p>
+                <p class="ending-copy">And if I could<br>ask life<br>for one thing...</p>
+                <p class="ending-copy">it wouldn&rsquo;t be<br>another chance.</p>
+                <p class="ending-copy">It would simply be...</p>
+                <p class="ending-copy ending-copy--thanks">five more minutes.</p>
+                <p class="ending-copy ending-copy--quiet">...</p>
+                <p class="ending-copy">If someone<br>came to your mind<br>while reading this...</p>
+                <p class="ending-copy ending-copy--thanks">maybe<br>this story<br>was yours too.</p>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
