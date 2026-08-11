@@ -51,7 +51,7 @@ window.addEventListener('load', function () {
     var pendingTimers = [];
     var NARRATION_CONTINUE_DELAY = 10800;
     var MEMORY_CONTINUE_DELAY = 1800;
-    var ENDING_HOLD_DELAY = 25000;
+    var ENDING_HOLD_DELAY = 35000;
     var OVERLAY_RELEASE_DELAY = 1500;
     var storyAudio = document.getElementById("story-audio");
     var audioToggle = document.getElementById("audio-toggle");
