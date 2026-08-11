@@ -53,6 +53,50 @@ window.addEventListener('load', function () {
     var MEMORY_CONTINUE_DELAY = 1800;
     var ENDING_HOLD_DELAY = 25000;
     var OVERLAY_RELEASE_DELAY = 1500;
+    var storyAudio = document.getElementById("story-audio");
+    var audioToggle = document.getElementById("audio-toggle");
+    var audioStarted = false;
+
+    function startStoryAudio() {
+        if (!storyAudio || audioStarted) return;
+
+        audioStarted = true;
+        storyAudio.volume = 0;
+
+        var playPromise = storyAudio.play();
+
+        if (playPromise !== undefined) {
+            playPromise.catch(function () {
+                audioStarted = false;
+            });
+        }
+
+        var fade = setInterval(function () {
+            if (!storyAudio) {
+                clearInterval(fade);
+                return;
+            }
+
+            if (storyAudio.volume < 0.14) {
+                storyAudio.volume = Math.min(0.14, storyAudio.volume + 0.01);
+            } else {
+                clearInterval(fade);
+            }
+        }, 120);
+    }
+    if (audioToggle && storyAudio) {
+        audioToggle.addEventListener("click", function() {
+            if (storyAudio.muted) {
+                storyAudio.muted = false;
+                audioToggle.textContent = "🔊";
+                audioToggle.setAttribute("aria-label", "Mute background audio");
+            } else {
+                storyAudio.muted = true;
+                audioToggle.textContent = "🔇";
+                audioToggle.setAttribute("aria-label", "Unmute background audio");
+            }
+        });
+    }
 
     continueButtons.forEach(function (button) {
         button.disabled = true;
@@ -187,10 +231,18 @@ window.addEventListener('load', function () {
             return;
         }
 
+        var endingCredit = endingScreen.querySelector('.ending-credit');
+
         resetEndingScroll();
         clearEndingRevealTimers();
 
         var endingCopies = Array.prototype.slice.call(endingScreen.querySelectorAll('.ending-copy'));
+
+        if (endingCredit) {
+            endingRevealTimers.push(setTimeout(function () {
+                endingCredit.classList.add('is-visible');
+            }, 7000));
+        }
         var endingGroups = [
             { items: endingCopies.slice(0, 4), startDelay: 0 },
             { items: endingCopies.slice(4, 11), startDelay: 1800 },
@@ -405,7 +457,7 @@ window.addEventListener('load', function () {
         if (!enterBtn || !landingContent || !overlay || !landing) {
             return;
         }
-
+        startStoryAudio();
         enterBtn.disabled = true;
         enterBtn.classList.add('is-pressed');
         landingContent.classList.add('is-leaving');
