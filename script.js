@@ -77,8 +77,8 @@ window.addEventListener('load', function () {
                 return;
             }
 
-            if (storyAudio.volume < 0.25) {
-                storyAudio.volume = Math.min(0.25, storyAudio.volume + 0.01);
+            if (storyAudio.volume < 0.75) {
+                storyAudio.volume = Math.min(0.75, storyAudio.volume + 0.01);
             } else {
                 clearInterval(fade);
             }
